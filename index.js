@@ -14,8 +14,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "client/build")));
 }
+app.use(express.static(path.join(__dirname, "client/build")));
 
 //routes 
 app.use('/todo', todoRouter);
@@ -27,6 +27,7 @@ app.listen(PORT, () => {
   console.log(process.env.DATABASE_URL);
   console.log(process.env.PORT);
   console.log(process.env.PG_USER);
+  console.log('sdlkhffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')
 });
 // 404 page 
 app.use('*', (req,res) => {
