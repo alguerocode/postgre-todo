@@ -16,7 +16,7 @@ const proConfig = {
 }
 
 const pool = new Pool(process.env.NODE_ENV === 'production' ? proConfig : devConfig)
-pool.query()
+
 
 
 module.exports = pool;
