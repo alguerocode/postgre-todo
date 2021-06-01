@@ -12,7 +12,7 @@ function connecting_DB() {
   let db = new Pool({
     connectionString:
       process.env.NODE_ENV === "production" ? proConfig: devConfig,
-    ssl:!!(process.env.DATABASE_URL)
+    ssl:{ rejectUnauthorized: false }
   })
   return db
 }
