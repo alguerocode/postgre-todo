@@ -11,7 +11,8 @@ const proConfig = process.env.DATABASE_URL; //heroku addons
 function connecting_DB() {
   let db = new Pool({
     connectionString:
-      process.env.NODE_ENV === "production" ? proConfig +'?ssl=true': devConfig,
+      process.env.NODE_ENV === "production" ? proConfig: devConfig,
+    ssl:!!(process.env.DATABASE_URL)
   })
   return db
 }
